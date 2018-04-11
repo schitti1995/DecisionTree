@@ -31,7 +31,7 @@ public class CrossValidation {
     /**
      * This method shuffles the given data, splits it into validation and training sets.
      * It then trains a decision tree on each training slice and tests on the validation slice.
-     * Each finds the average error on the validation slices for each max_depth of the decision tree.
+     * Error is computed on the validation slice each time and the average error is returned.
      * @param originalData
      * @return average validation error for a shuffle of the data
      */
@@ -62,7 +62,7 @@ public class CrossValidation {
     }
     
     /**
-     * Given a dataset, it shuffles the order of the records.
+     * Given a dataset, this method shuffles the order of the records.
      * @param originalData
      * @return
      */

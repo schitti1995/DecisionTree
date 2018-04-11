@@ -177,7 +177,7 @@ public class decisionTree {
      * @return
      */
     private static String predictRow(TreeNode root, ArrayList<String> row) {
-        //If you reached a leaf, print its label.
+        //If you reached a leaf, return the label. This is the prediction made on the given record.
         if(root.isLeaf) {
             //System.out.println(root.label);
             return root.label;
@@ -185,6 +185,8 @@ public class decisionTree {
         
         String att_type = root.attribute.type;
         if(att_type.equals("nominal")) {
+            //Check the children of this node and go down the branch 
+            //that contains the appropriate value of the current node.
             for(TreeNode child : root.adj) {
                 if(child.prev_SplitVal.equals(row.get(root.attribute.m))) {
                     return predictRow(child, row);
