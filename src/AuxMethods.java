@@ -203,6 +203,7 @@ class AuxMethods {
     
     /**
      * This method sets the hyperparameters max_depth and info_gain threshold if passed to the program.
+     * Otherwise, default values are used.
      * @param args
      */
     public static void setHyperParameters(String[] args) {
